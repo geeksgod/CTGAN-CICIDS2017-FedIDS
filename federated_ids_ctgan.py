@@ -30,7 +30,7 @@ def main():
 
     # ── Update these paths to point to your actual files ──────────────────────
     REAL_CSV      = "datasets/cicids2017_train.csv"      # full CICIDS-2017 CSV (with Label column)
-    SYNTHETIC_CSV = "datasets/cicids2017_synthetic.csv"     # CTGAN-generated CSV (same column schema)
+    SYNTHETIC_CSV = "datasets/cicids2017_synthetic-600.csv"     # CTGAN-generated CSV (same column schema)
     OUTPUT_DIR    = f"results/results_{config.experiment_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     experiment = FederatedIDSExperiment(config, REAL_CSV, SYNTHETIC_CSV, OUTPUT_DIR)
