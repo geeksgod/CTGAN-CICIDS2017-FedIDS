@@ -22,7 +22,7 @@ def main():
         batch_size         = 128,
         feature_selection_k= 50,
         model_hidden_dims  = [256, 128, 64],
-        dp_epsilon         = 4.0,
+        dp_epsilon         = 1.0,
         dp_delta           = 1e-5,
         random_seed        = 42,
         experiment_name    = "federated_ids_ctgan_eval",

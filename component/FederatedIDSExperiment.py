@@ -56,35 +56,42 @@ class FederatedIDSExperiment:
             X_synth, y_synth, test_size=self.config.test_size,
             random_state=self.config.random_seed, stratify=y_real)
 
-        # distribute real data across organizations
-        org_keys   = list(ORG_PROFILES.keys())
-        splits_tr  = np.array_split(np.random.permutation(len(X_tr)), self.config.n_organizations)
-        splits_te  = np.array_split(np.random.permutation(len(X_te)), self.config.n_organizations)
-        test_sets  = [(X_te[idx], y_te[idx]) for idx in splits_te]
 
         input_dim = X_real.shape[1]
-
         print("\n" + "─"*60)
         print("Base Line: Real only")
         print("─"*60)
+        splits_tr_real = np.array_split(np.random.permutation(len(X_tr)), self.config.n_organizations)
+        splits_te_real = np.array_split(np.random.permutation(len(X_te)), self.config.n_organizations)
+        test_sets_real = [(X_te[idx], y_te[idx]) for idx in splits_te_real]
+
         real_metrics, real_orgs, real_gm = self._run_federation(
-            input_dim, X_tr, y_tr, X_te, y_te, splits_tr, test_sets,
+            input_dim, X_tr, y_tr, X_te, y_te, splits_tr_real, test_sets_real,
             synthetic=False)
 
         
         print("\n" + "─"*60)
         print("TRTS: Train Real Test Synthetic")
         print("─"*60)
+
+        # Generate specific splits and test sets for Synthetic Test data
+        splits_te_sy = np.array_split(np.random.permutation(len(X_te_sy)), self.config.n_organizations)
+        test_sets_sy = [(X_te_sy[idx], y_te_sy[idx]) for idx in splits_te_sy]
+
         trts_metrics, trts_orgs, trts_gm = self._run_federation(
-            input_dim, X_tr, y_tr, X_te_sy, y_te_sy, splits_tr, test_sets,
+            input_dim, X_tr, y_tr, X_te_sy, y_te_sy, splits_tr_real, test_sets_sy,  # <-- Fixed test_sets
             synthetic=False)
 
 
         print("\n" + "─"*60)
         print("TSTR: Train Synthetic Test Real")
         print("─"*60)
+
+        # Generate specific splits for Synthetic Train data (in case length differs from real)
+        splits_tr_sy = np.array_split(np.random.permutation(len(X_tr_sy)), self.config.n_organizations)
+
         tstr_metrics, tstr_orgs, tstr_gm = self._run_federation(
-            input_dim, X_tr_sy, y_tr_sy, X_te, y_te, splits_tr, test_sets,
+            input_dim, X_tr_sy, y_tr_sy, X_te, y_te, splits_tr_sy, test_sets_real, # <-- Fixed split & test_sets
             synthetic=True)
 
         # 6. Collect per-org ROC data ──────────────────────────────────────────

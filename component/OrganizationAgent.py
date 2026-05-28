@@ -27,7 +27,7 @@ class OrganizationAgent:
         self.optimizer    = optim.Adam(self.model.parameters(), lr=config.learning_rate)
         self.criterion    = nn.BCEWithLogitsLoss()
         self.scheduler    = optim.lr_scheduler.StepLR(self.optimizer, step_size=5, gamma=0.9)
-        self.privacy_engine = PrivacyEngine(accountant="rdp")
+        self.privacy_engine = PrivacyEngine(accountant="prv")
 
         # These are set in set_data() once we have a DataLoader
         self._private_model     = None
