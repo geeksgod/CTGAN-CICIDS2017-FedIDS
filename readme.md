@@ -69,13 +69,11 @@ In alignment with academic integrity guidelines, all AI-generated refactoring wa
 
 ```bibtex
 @software{federated_cybersecurity_2024,
-  title        = {Federated Learning for Cybersecurity Threat Detection},
-  author       = {{Cybersecurity Research Team}},
-  year         = {2024},
-  url          = {[https://github.com/yourusername/federated-cybersecurity](https://github.com/yourusername/federated-cybersecurity)},
-  note         = {GitHub Repository}
+  title={Federated Learning for Cybersecurity Threat Detection},
+  author={Cybersecurity Research Team},
+  year={2024},
+  url={https://github.com/yourusername/federated-cybersecurity}
 }
-
 
 @inproceedings{ctgan,
   title        = {Modeling Tabular data using Conditional GAN},
