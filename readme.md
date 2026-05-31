@@ -21,6 +21,7 @@ scikit-learn
 scipy
 matplotlib
 seaborn
+opacus
 
 ### CTGAN Connfig
 ```bash
