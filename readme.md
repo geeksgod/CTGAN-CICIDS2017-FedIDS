@@ -2,7 +2,7 @@
 * **Description:** The dataset contains benign network traffic and up-to-date, realistic cyberattacks (such as DDoS, Brute Force, XSS, and Infiltration) captured over a 5-day period. It is provided in both raw packet capture (pcap) format and pre-processed CSV format containing calculated network flow features.
 
 ### Run the CTGAN
-1. Upload dataset to you google drive
+1. Upload dataset to you google drivev(T4 GPU)
 2. Run CTGAN > 600epochCTGAN.ipnyb file in google collab
 
 ### Run the FED-IDS
@@ -12,9 +12,44 @@
 ```bash
 python federated_ids_ctgan.py
 ```
+### Libraries used
+torch
+sdv
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+seaborn
 
-
-
+### CTGAN Connfig
+```bash
+  epochs: 600
+  batch_size: 1000
+  generator_dim: (256, 256, 256)
+  discriminator_dim: (256, 256, 256)
+  generator_lr: 0.0002
+  discriminator_lr: 0.0002
+  discriminator_steps: 1
+  pac: 10
+  verbose: True
+  cuda: True
+  log_frequency: True
+```
+### FED-IDS Connfig
+```bash
+    n_organizations    = 5,
+    global_rounds      = 20,
+    local_epochs       = 3,
+    learning_rate      = 0.001,
+    batch_size         = 128,
+    feature_selection_k= 50,
+    model_hidden_dims  = [256, 128, 64],
+    dp_epsilon         = 1.0,
+    dp_delta           = 1e-5,
+    random_seed        = 42,
+    experiment_name    = "federated_ids_ctgan_eval",
+```
 
 
 ## 🤖 AI Refactoring & Attribution Disclosure
