@@ -52,6 +52,23 @@ opacus
     experiment_name    = "federated_ids_ctgan_eval",
 ```
 
+##Key Performance Comparison
+
+Evaluation across real baseline, **TRTS** (*Train on Real, Test on Synthetic*), and **TSTR** (*Train on Synthetic, Test on Real*):
+
+| Metric | Real Only (Baseline) | TRTS (Model Robustness) | TSTR (Synthetic Utility) |
+| :--- | :---: | :---: | :---: |
+| **Accuracy** | **96.37%** | 87.23% | 92.47% |
+| **F1-Score** | **96.37%** | 86.82% | 92.69% |
+| **Precision** | **95.64%** | 89.16% | 89.54% |
+| **Recall (Sensitivity)** | **97.12%** | 84.60% | 96.07% |
+| **Specificity** | **95.63%** | 89.84% | 88.91% |
+| **AUC-ROC** | **0.9913** | 0.9605 | 0.9664 |
+| **True Positives (TP)** | 9,596 | 8,359 | 9,493 |
+| **True Negatives (TN)** | 9,563 | 8,984 | 8,891 |
+| **False Positives (FP)** | 437 | 1,016 | 1,109 |
+| **False Negatives (FN)** | 285 | 1,522 | 388 |
+
 
 ## 🤖 AI Refactoring & Attribution Disclosure
 
