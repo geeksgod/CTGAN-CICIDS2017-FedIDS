@@ -69,6 +69,31 @@ Evaluation across real baseline, **TRTS** (*Train on Real, Test on Synthetic*), 
 | **False Positives (FP)** | 437 | 1,016 | 1,109 |
 | **False Negatives (FN)** | 285 | 1,522 | 388 |
 
+## Evaluation Results
+
+Below is the summary of evaluation plots generated from the federated intrusion detection system (FedIDS) experiment using CTGAN on the CICIDS2017 dataset.
+
+### Summary & Overview
+<p align="center">
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/06_summary_panel.png" alt="Summary Panel" width="800"/>
+</p>
+
+### Training & Convergence
+<div align="center">
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/02_training_convergence.png" alt="Training Convergence" width="450"/>
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/07_privacy_budget.png" alt="Privacy Budget" width="450"/>
+</div>
+
+### Model Performance & Metrics
+<div align="center">
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/03_confusion_matrices.png" alt="Confusion Matrices" width="450"/>
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/04_roc_curves.png" alt="ROC Curves" width="450"/>
+</div>
+
+### Distribution & Breakdown
+<p align="center">
+  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/05_org_breakdown.png" alt="Organization Breakdown" width="800"/>
+</p>
 
 ## 🤖 AI Refactoring & Attribution Disclosure
 
