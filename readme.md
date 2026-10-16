@@ -72,10 +72,9 @@ Evaluation across real baseline, **TRTS** (*Train on Real, Test on Synthetic*), 
 
 ## 🤖 AI Refactoring & Attribution Disclosure
 
-A significant portion of this codebase was optimized and refactored using generative AI assistance. While the core research logic, algorithmic requirements, and system design were defined by the author, **[OpenAI ChatGPT, Anthropic Claude, Gemini]** was utilized to improve code quality, performance, and structure.
+Some portion of this codebase was optimized and refactored using generative AI assistance. While the core research logic, algorithmic requirements, and system design were defined by the author, **[OpenAI ChatGPT, Anthropic Claude, Gemini]** was utilized to improve code quality, performance, and structure.
 
 ### Areas of AI Assistance
-* **Code Refactoring:** Modularizing monolithic scripts into clean, reusable functions and classes.
 * **Performance Optimization:** Enhancing loop structures, vectorizing data operations, and improving memory efficiency.
 * **Documentation & Testing:** Automatically generating docstrings, inline comments, and writing unit test structures.
 
