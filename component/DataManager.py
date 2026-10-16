@@ -28,7 +28,7 @@ class DataManager:
 
         # Identify top 5 attacks
         attack_counts = labels[labels != 'BENIGN'].value_counts()
-        self.top_attacks = attack_counts.head(5).index.tolist()
+        self.top_attacks = attack_counts.head(7).index.tolist()
         valid = ['BENIGN'] + self.top_attacks
         df = df[labels.isin(valid)].copy()
         labels = labels[labels.isin(valid)]
