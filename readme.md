@@ -9,9 +9,22 @@
 1. Download training data and Synthetic data form CTGAN run
 2. Add it to dataset folder 
 3. run code 
+
+
+```bash
+.venv/bin/activate
+```
+if running for the first time: 
+```bash
+pip install -r req.txt
+```
+
+To run the main code: 
 ```bash
 python federated_ids_ctgan.py
 ```
+
+
 ### Libraries used
 torch
 sdv
@@ -52,54 +65,13 @@ opacus
     experiment_name    = "federated_ids_ctgan_eval",
 ```
 
-##Key Performance Comparison
-
-Evaluation across real baseline, **TRTS** (*Train on Real, Test on Synthetic*), and **TSTR** (*Train on Synthetic, Test on Real*):
-
-| Metric | Real Only (Baseline) | TRTS (Model Robustness) | TSTR (Synthetic Utility) |
-| :--- | :---: | :---: | :---: |
-| **Accuracy** | **96.37%** | 87.23% | 92.47% |
-| **F1-Score** | **96.37%** | 86.82% | 92.69% |
-| **Precision** | **95.64%** | 89.16% | 89.54% |
-| **Recall (Sensitivity)** | **97.12%** | 84.60% | 96.07% |
-| **Specificity** | **95.63%** | 89.84% | 88.91% |
-| **AUC-ROC** | **0.9913** | 0.9605 | 0.9664 |
-| **True Positives (TP)** | 9,596 | 8,359 | 9,493 |
-| **True Negatives (TN)** | 9,563 | 8,984 | 8,891 |
-| **False Positives (FP)** | 437 | 1,016 | 1,109 |
-| **False Negatives (FN)** | 285 | 1,522 | 388 |
-
-## Evaluation Results
-
-Below is the summary of evaluation plots generated from the federated intrusion detection system (FedIDS) experiment using CTGAN on the CICIDS2017 dataset.
-
-### Summary & Overview
-<p align="center">
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/06_summary_panel.png" alt="Summary Panel" width="800"/>
-</p>
-
-### Training & Convergence
-<div align="center">
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/02_training_convergence.png" alt="Training Convergence" width="450"/>
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/07_privacy_budget.png" alt="Privacy Budget" width="450"/>
-</div>
-
-### Model Performance & Metrics
-<div align="center">
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/03_confusion_matrices.png" alt="Confusion Matrices" width="450"/>
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/04_roc_curves.png" alt="ROC Curves" width="450"/>
-</div>
-
-### Distribution & Breakdown
-<p align="center">
-  <img src="results/results_federated_ids_ctgan_eval_20260528_102829/05_org_breakdown.png" alt="Organization Breakdown" width="800"/>
-</p>
 
 ## 🤖 AI Refactoring & Attribution Disclosure
 
-Some portion of this codebase was optimized and refactored using generative AI assistance. While the core research logic, algorithmic requirements, and system design were defined by the author, **[OpenAI ChatGPT, Anthropic Claude, Gemini]** was utilized to improve code quality, performance, and structure.
+A significant portion of this codebase was optimized and refactored using generative AI assistance. While the core research logic, algorithmic requirements, and system design were defined by the author, **[OpenAI ChatGPT, Anthropic Claude, Gemini]** was utilized to improve code quality, performance, and structure.
 
 ### Areas of AI Assistance
+* **Code Refactoring:** Modularizing monolithic scripts into clean, reusable functions and classes.
 * **Performance Optimization:** Enhancing loop structures, vectorizing data operations, and improving memory efficiency.
 * **Documentation & Testing:** Automatically generating docstrings, inline comments, and writing unit test structures.
 
